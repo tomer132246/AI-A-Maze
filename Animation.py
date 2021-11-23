@@ -53,7 +53,7 @@ class Animation:
         plt.xlim(x_min, x_max)
         plt.ylim(y_min, y_max)
         global animation
-        animation = FuncAnimation(self.fig, func=self._animation_func, frames=len(self.path), interval=200, blit=self.blit,
+        animation = FuncAnimation(self.fig, func=self._animation_func, frames=len(self.path), interval=500, blit=self.blit,
                                   init_func=self._init_animation)
         self.animation = animation
         self.prev_patches_updated = []

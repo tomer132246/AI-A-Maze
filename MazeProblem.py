@@ -151,6 +151,8 @@ def create_problem(maze_name, forward_cost=1, turn_cost=5):
     maze_map[head[0], head[1]] = 0
     maze_map[tail_goal[0], tail_goal[1]] = 0
     maze_map[head_goal[0], head_goal[1]] = 0
-    maze_problem = MazeProblem(maze_map, head, tail, head_goal, tail_goal, forward_cost, turn_cost)
+    #TODO: tomer remove the turn cost u changed.
+    maze_problem = MazeProblem(maze_map, head, tail, head_goal, tail_goal, forward_cost, max(abs(head[0] - tail[0]),
+                                                                                             abs(head[1] - tail[1])))
     return maze_problem
 

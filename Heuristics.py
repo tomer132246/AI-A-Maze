@@ -5,13 +5,17 @@ from GraphSearch import NodesCollection
 
 
 def tail_manhattan_heuristic(state: MazeState):
-    # TODO (EX 7.2), implement heuristic, delete exception
-    raise NotImplemented
+    return state.maze_problem.forward_cost * (abs(state.tail[0] - state.maze_problem.tail_goal[0]) + abs(state.tail[1] - state.maze_problem.tail_goal[1]))
+
 
 
 def center_manhattan_heuristic(state: MazeState):
-    # TODO (EX 9.2), implement heuristic, delete exception
-    raise NotImplemented
+
+    curr_mid_pos = np.array([abs(state.tail[0] - state.head[0]), abs(state.tail[1]-state.head[1])])
+    goal_mid_pos = np.array([abs(state.maze_problem.tail_goal[0] - state.maze_problem.head_goal[0]),
+                             abs(state.maze_problem.tail_goal[1]-state.maze_problem.head_goal[1])])
+    return abs(curr_mid_pos[0] - goal_mid_pos[0]) + abs(curr_mid_pos[1] - goal_mid_pos[1])
+
 
 
 class ShorterRobotHeuristic:
