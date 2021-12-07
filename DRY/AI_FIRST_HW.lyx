@@ -945,7 +945,7 @@ tail_manhattan_heuristic
 \noun off
 \color none
 \lang hebrew
- אינה קבילה מכיוון 
+ אינה קבילה )ישנו
 \family default
 \series default
 \shape default
@@ -958,11 +958,63 @@ tail_manhattan_heuristic
 \uwave default
 \noun default
 \color inherit
-שישנו מצב עבורו 
+ מצב עבורו 
 \begin_inset Formula $h(n)>h^{*}(n)$
 \end_inset
 
-, נראה:
+(, זה נובע מעצם קיומו של אופרטור הסיבוב ועלותו - כאשר אנו מחשבים את עלותו
+ של מצב שהגיע כתוצאה מסיבוב אנו משנים באופן 
+\begin_inset Quotes eld
+\end_inset
+
+מידי
+\begin_inset Quotes erd
+\end_inset
+
+ את המרחק של הזנב ממרחק המטרה שלו מה שמגדיל את ערך ה-
+\begin_inset Formula $f(n)$
+\end_inset
+
+ משמעותית בעבור אותו מצב, בעוד שאם עלות של אופרטור ההתקדמות קטנה משמעותית
+ ממנו נקבל מצב שבו: 
+\begin_inset Formula $h(n)>h^{*}(n)$
+\end_inset
+
+, ונשאר לעשות
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+לצורך העניין 
+\begin_inset Formula $r$
+\end_inset
+
+ סיבובים בכדי להגיע למצב המטרה.
+\end_layout
+
+\begin_layout Standard
+נראה:
 \end_layout
 
 \begin_layout Standard
@@ -993,6 +1045,10 @@ tail_manhattan_heuristic
 
 \series bold
 הסבר
+\series default
+ 
+\series bold
+הדיאגרמה
 \series default
 : מצב ההתחלה הוא פשוט מצב הסיום הפוך, כלומר עלינו להסתובב פעמיים, והרובוט
  בגודל
@@ -1101,7 +1157,7 @@ tail_manhattan_heuristic
 תנאי הכרחי ומספיק
 \series default
  על מחיר אופרטור הסיבוב כדי למנוע מצב זה, הוא שמחירו יהיה
-\begin_inset Formula $\lfloor L\rfloor$
+\begin_inset Formula $L$
 \end_inset
 
  כאשר 
@@ -1109,6 +1165,858 @@ tail_manhattan_heuristic
 \end_inset
 
  - הוא אורך המלבן.
+\end_layout
+
+\begin_layout Part*
+משימה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+9
+\end_layout
+
+\begin_layout Section*
+סעיף
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+)
+\series bold
+*הערה:
+\series default
+ ישנה בעיה אם עלות אופרטור ההתקדמות קטנה מ -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+, במקרה זה, לא בהכרח מתקיים כי 
+\lang english
+center_manhatan_heuristic
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ קבילה.
+ לכן, עבור פתרון זה, נניח כי כי עלות האופרטור 
+\begin_inset Formula $1\leq$
+\end_inset
+
+.(
+\end_layout
+
+\begin_layout Standard
+מתקיים כי-
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+center_manhatan_heuristic
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+קבילה.
+ נגדיר: 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ - מחירו של אופרטור 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\begin_inset Formula $d$
+\end_inset
+
+- מרחק המרכז במצב מסויים ממרחק המרכז במצב המטרה.
+ 
+\begin_inset Formula $frwd$
+\end_inset
+
+ - אופרטור התקדמות.
+ 
+\begin_inset Formula $rot$
+\end_inset
+
+ - אופרטור סיבוב
+\end_layout
+
+\begin_layout Standard
+נראה באינדוקציה על 
+\begin_inset Formula $r$
+\end_inset
+
+ - שנגדירו מספר אופרטורי הסיבוב בפתרון אופטימלי ממצב כלשהו, שמתקיים לכל
+ 
+\begin_inset Formula $r\in\mathbb{N}$
+\end_inset
+
+ כי 
+\begin_inset Formula $h(n)\leq h^{*}(n)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+בסיס
+\series default
+: 
+\begin_inset Formula $r=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כלומר, הפתרון האופטימלי ממצב 
+\begin_inset Formula $n$
+\end_inset
+
+ נתון הוא לעשות שימוש באופרטור התקדמות בלבד.
+ מכיוון שאני מתקדמים מרחק של -
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בלבד בכל שימוש באופרטור, נאלץ לעשות שימוש ב- 
+\begin_inset Formula $d$
+\end_inset
+
+ כאלה.
+ מכיוון ש 
+\begin_inset Formula $p(frwd)\geq1$
+\end_inset
+
+ מתקיים שהעלות היא: 
+\begin_inset Formula 
+\[
+h^{*}(n)=d*p(frwd)\geq d=h(n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+הנחה: 
+\series default
+נניח נכונות עבור 
+\begin_inset Formula $r=k$
+\end_inset
+
+ אופרטורים של סיבוב בפתרון האופטמלי.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+צעד:
+\series default
+ נראה נכונות עבור 
+\begin_inset Formula $r=k+1$
+\end_inset
+
+ אופרטורים של סיבוב בפתרון האופטימלי.
+\end_layout
+
+\begin_layout Standard
+נסתכל על המצב 
+\begin_inset Formula $n'$
+\end_inset
+
+ בו היינו לפני שנעשה הסיבוב ה-
+\begin_inset Formula $k+1$
+\end_inset
+
+.
+ מכיוון ש-
+\begin_inset Formula $r=k$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $h^{*}(n')\geq h(n')$
+\end_inset
+
+ )מההנחה(.
+\end_layout
+
+\begin_layout Standard
+כעת, נשים לב שהסיבוב אינו משפיע על 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ אם כן, הערכת ההירוסטיקה של מצב 
+\begin_inset Formula $n$
+\end_inset
+
+ שהגענו אליו ממצב 
+\begin_inset Formula $n'$
+\end_inset
+
+ לא השתנת, ונשארה 
+\begin_inset Formula $h^{*}(n')\geq h(n')=h(n)=d$
+\end_inset
+
+.
+ נשים לב שממצב 
+\begin_inset Formula $n$
+\end_inset
+
+ לפי ההנחה אין יותר בחירה באופרטורי סיבוב בפתרון האופטימלי.
+ לכן, לפי הבסיס:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $h^{*}(n)\geq d=h(n)$
+\end_inset
+
+ וסיימנו.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+משימה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+10
+\end_layout
+
+\begin_layout Section*
+סעיף
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+מצ
+\begin_inset Quotes erd
+\end_inset
+
+ב הגרפים:
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename q10_2.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הסבר:
+\end_layout
+
+\begin_layout Standard
+ראשית, נשים לב שעבור 
+\begin_inset Formula $w=0.5$
+\end_inset
+
+ הנוסחא שקולה ל-
+\begin_inset Formula $f(n)=g(n)+h(n)$
+\end_inset
+
+ ולכן עם האוריסטיקה קבילה והאלגוריתם שלנו, זהו יהיה הפתרון עם העלות האופטמלית.
+\end_layout
+
+\begin_layout Standard
+עבור
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\numeric off
+: עם 
+\begin_inset Formula $w$
+\end_inset
+
+ בערכים 
+\begin_inset Formula $0.4,0.5,0.7,0.8,1$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ ניתן לראות כי קיבלנו זמן ריצה אופטימלי, והעלות לא השתנתה לכל 
+\begin_inset Formula $w$
+\end_inset
+
+ נבדק.
+ 
+\end_layout
+
+\begin_layout Standard
+עבור
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+: השימוש ב-
+\begin_inset Formula $w=0.7$
+\end_inset
+
+ נותן את זמן הריצה הטוב ביותר עם העלות האופטימלית )העלות זהה ל-
+\begin_inset Formula $w=0.5$
+\end_inset
+
+(.
+ 
+\end_layout
+
+\begin_layout Standard
+עבור
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+: לכל 
+\begin_inset Formula $w$
+\end_inset
+
+ קיבלנו עלות אופטימלית, הזמן הטוב ביותר התקבל עבור 
+\begin_inset Formula $w=0.8$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Part*
+משימה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+11
+\end_layout
+
+\begin_layout Standard
+מתקיים 
+\begin_inset Formula $d(s,s')=d(\bar{s},\bar{s'})$
+\end_inset
+
+ מכיוון שאותה סדרת האופרטורים שמגולמת ב-
+\begin_inset Formula $d(s,s')$
+\end_inset
+
+ 
+\series bold
+זהה
+\series default
+ אם נפעיל 
+\begin_inset Formula $reverse$
+\end_inset
+
+ על סדר האופרטורים, ונחליף כיווני סיבובים.
+ כלומר עבור 
+\begin_inset Formula $\bar{d}\rightarrow(RotateLeft,Frwd,Frwd)\Leftarrow d\rightarrow(Frwd,Frwd,RotateRight)$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+כמו כן, נשמרת חוקיות התנועה, שכן לא יהיה ניתן לבצע ב-
+\begin_inset Formula $\bar{d}$
+\end_inset
+
+ סיבוב אם לא היינו יכולים לבצע ב-
+\begin_inset Formula $d$
+\end_inset
+
+ את הסיבוב ההפוך לא, וזה נובע מהחלפת כיווני הראש והזנב במצבים הללו.
+\end_layout
+
+\begin_layout Part*
+משימה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+12
+\end_layout
+
+\begin_layout Section*
+סעיף
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+אם 
+\begin_inset Formula $h_{pre}$
+\end_inset
+
+ קבילה, אזי לכל 
+\begin_inset Formula $s$
+\end_inset
+
+ מתקיים: 
+\begin_inset Formula $h_{pre}(s)\leq h^{*}(s)$
+\end_inset
+
+.
+ כמו כן, מעצם העובדה ש-
+\begin_inset Formula $d(\bar{s_{k}^{*}},\bar{s_{k}})=d(s_{k},s_{k}^{*})\leq d(s,s^{*})$
+\end_inset
+
+ )קיצור המלבן רק מקטין את העלות מכיוון שיש יותר אופציות לפעולות לצורך הגעה
+ למצב 
+\begin_inset Formula $s^{*}$
+\end_inset
+
+(.
+ כמו כן, 
+\end_layout
+
+\begin_layout Section*
+סעיף
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\end_layout
+
+\begin_layout Standard
+לא.
+ השימוש בהיאוריסטיקה לא קבילה איננו מבטיח קבלת פתרון לא אופטימלי.
+ ניתן לדוגמא מצב שבו ההיאוריסטיקה מחשבת עבור צמתים לאורך המסלול האופטימלי
+ 
+\begin_inset Formula $h'>h*$
+\end_inset
+
+ ולכל שאר הצמתים 
+\begin_inset Formula $h'=\infty$
+\end_inset
+
+.
 \end_layout
 
 \end_body
